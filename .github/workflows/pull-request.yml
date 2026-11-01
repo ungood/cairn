@@ -1,0 +1,18 @@
+name: Pull Request
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+# A new push to a pull request cancels its older runs. The "-caller" part keeps
+# this group distinct from any group the called workflow builds.
+concurrency:
+  group: ${{ github.workflow }}-caller-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: CI
+    uses: ungood/standards/.github/workflows/ci.yml@26f872057cc96483a7e6b4e293dfe8acaa3778c8 # v1.0.0

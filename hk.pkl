@@ -1,0 +1,15 @@
+amends "package://github.com/ungood/standards/releases/download/v1.0.0/standards@1.0.0#/Standards.pkl"
+
+import "package://github.com/ungood/standards/releases/download/v1.0.0/standards@1.0.0#/Hk.pkl"
+
+// Waivers: one rule ID per line, each with the reason it doesn't apply.
+// skip_steps = List(
+//   "std-example", // reason
+// )
+
+steps {
+  ["rumdl"] = Hk.builtins.rumdl
+  ["jactionlint"] = Hk.builtins.jactionlint
+
+  // Add this repo's own linters and formatters here.
+}

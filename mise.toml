@@ -1,0 +1,27 @@
+[settings]
+lockfile = true
+
+[tools]
+hk = "2.10.0"
+rumdl = "0.3.2"
+jactionlint = "2.4.0"
+
+[tasks.setup]
+description = "Install the tools this repo needs"
+run = "mise install"
+
+[tasks.check]
+description = "Run every check without changing any files"
+run = "hk check --all"
+
+[tasks.fix]
+description = "Apply safe fixes"
+run = "hk fix --all"
+
+[tasks.test]
+description = "Run the tests"
+run = "echo 'no tests yet'"
+
+[tasks.ci]
+description = "Run everything CI runs"
+depends = ["check", "test"]

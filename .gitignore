@@ -1,0 +1,5 @@
+.env
+mise.local.toml
+mise.local.lock
+.mise/locks/mise.local/
+hk.local.pkl
